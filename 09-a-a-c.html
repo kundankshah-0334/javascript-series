@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<style>
+    .input-amount{
+        padding: 10px;
+      
+    }
+    .calculate-cost{
+        padding:12px;
+        padding-top: 10px;
+        background-color: green;
+        border: none;
+        color: white;
+        font-size: 15px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+</style>
+<body>
+   <h1>Let's Calculate Amazon Shipping Order ----</h1>
+
+   <p>If Amount is beleow 40$ = 10$ Shipping </p>
+   <p>If Amount is above 40$ = FREE Shipping </p>
+
+   <input type="text" placeholder="Cost of order" class="js-amount input-amount"  onkeydown="
+  handleCostKeydown(event);
+   
+   ">
+   <button class="calculate-cost" onclick="
+     calculateTotal();
+   ">Calculate</button>
+   <p class="js-show-cost" ></p>
+   
+
+   
+
+   <button class="js-head" onclick="
+    resulth()
+   ">Head</button>
+   <button class="js-tail" onclick="
+   resultt()
+   ">Tail</button>
+   <p class="js-ht-result"></p>
+
+
+   <input type="text" placeholder="name" class="js-name-just" onkeyup="handleNameKeydown(event)">
+   <button  onclick="
+   namePrint1();
+    ">Submit</button>
+   <p class="show-name-just"></p>
+
+   <input type="text" placeholder="name" class="js-name">
+   <button  onclick="
+   namePrint();
+    ">Submit</button>
+   <p class="show-name"></p>
+   <script>
+
+    function namePrint(){
+        const name =  document.querySelector('.js-name');
+        let name1 = name.value;
+        document.querySelector('.show-name').innerHTML = `${name1}`;
+    }
+
+    function namePrint1(){
+        const name =  document.querySelector('.js-name-just');
+        let name1 = name.value;
+        document.querySelector('.show-name-just').innerHTML = `${name1}`;
+    }
+
+    function handleNameKeydown(event){
+        if(event){
+            namePrint1();
+
+         }
+    }
+
+
+
+
+
+
+    function resulth(){
+        const yourMove =  document.querySelector('.js-head').innerHTML;
+        if(yourMove === 'Head'){
+            document.querySelector('.js-ht-result').innerHTML = yourMove;
+        }
+    }
+    function resultt(){
+        const yourMove1 =  document.querySelector('.js-tail').innerHTML;
+         if(yourMove1 === 'Tail'){
+            document.querySelector('.js-ht-result').innerHTML = yourMove1;
+        }
+    }
+
+
+
+
+    function handleCostKeydown(event){
+        if(event.key === 'Enter'){
+        calculateTotal();
+
+         }
+    }
+      function calculateTotal(){
+      const inputElement = document.querySelector('.js-amount');
+      let cost = Number(inputElement.value);
+
+      if(cost < 40){
+        cost =  cost+10;
+      }
+      
+      document.querySelector('.js-show-cost').innerHTML = `$${cost}`;
+      }
+   </script>
+</body>
+
+</html>
