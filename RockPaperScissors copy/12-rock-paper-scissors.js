@@ -52,7 +52,16 @@ const score = JSON.parse(localStorage.getItem('score')) || {
    playeGame('Scissors');
  });
 
- 
+ document.body.addEventListener('keydown', (event) => {
+   console.log(event.key);
+   if(event.key === 'r' || 'R'){
+      playeGame('Rock');
+   } else if (event.key === 'p' || 'P'){
+      playeGame('Paper');
+   } else if (event.key === 's' || 'S'){
+      playeGame('Scissors');
+   }
+ });
  function playeGame(playerMove) {
 
     const comuterMove = pickComputerMover();
