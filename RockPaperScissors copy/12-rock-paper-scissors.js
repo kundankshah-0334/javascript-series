@@ -24,8 +24,20 @@ const score = JSON.parse(localStorage.getItem('score')) || {
   }
  
 
+   const buttonElement = document.querySelector('.auto-play-button');
+   if(buttonElement.innerText === 'Auto Play'){
+      buttonElement.innerHTML = 'Stop Play'
+      // buttonElement.classList.add('is-subscribed');
+   }
+   else{
+      buttonElement.innerHTML = 'Auto Play'
+      // buttonElement.classList.remove('is-subscribed');
+   }
+
   }
   
+
+
   
  function pickComputerMover() {
     const randomNumber = Math.random();
