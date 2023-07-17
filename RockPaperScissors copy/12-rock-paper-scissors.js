@@ -42,7 +42,17 @@ const score = JSON.parse(localStorage.getItem('score')) || {
  }
 
 
+ document.querySelector('.js-rock-button').addEventListener('click', () =>{
+   playeGame('Rock');
+ });
+ document.querySelector('.js-paper-button').addEventListener('click', () =>{
+   playeGame('Paper');
+ });
+ document.querySelector('.js-scissors-button').addEventListener('click', () =>{
+   playeGame('Scissors');
+ });
 
+ 
  function playeGame(playerMove) {
 
     const comuterMove = pickComputerMover();
