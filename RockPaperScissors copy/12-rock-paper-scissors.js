@@ -6,6 +6,27 @@ const score = JSON.parse(localStorage.getItem('score')) || {
 
   updateScoreElement();
 
+  let isAutoPlaying = false;
+  let intervalId;
+ 
+
+   function autoPlay(){
+      if(!isAutoPlaying){
+     intervalId =  setInterval (function(){
+         const playerMove =  pickComputerMover();
+         playeGame(playerMove);
+      },1000);
+      isAutoPlaying = true;
+     }
+     else{
+      clearInterval(intervalId);
+      isAutoPlaying = false;
+  }
+ 
+
+  }
+  
+  
  function pickComputerMover() {
     const randomNumber = Math.random();
     let comuterMove = '';
@@ -19,6 +40,8 @@ const score = JSON.parse(localStorage.getItem('score')) || {
     }
     return comuterMove;
  }
+
+
 
  function playeGame(playerMove) {
 
