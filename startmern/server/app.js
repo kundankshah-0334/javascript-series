@@ -1,16 +1,30 @@
+const dotenv = require("dotenv");
 const mongoose = require('mongoose');
 const express = require('express');
 const app  = express();
-const PORT =3000;
-const DB = 'mongodb+srv://kundanlal96580:Wer6SjeCyBT1U415@cluster0.7orc3b1.mongodb.net/myfirstdb?retryWrites=true&w=majority';
+const PORT =process.env.PORT;
 
-mongoose.connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
-.then(()=>{
-    console.log("mongo connect sucessfully");
-})
-.catch((err)=>{
-    console.log(`mongoDB is not connected${err}`)
-})
+// dotenv.config({ path: '/config.env'});
+dotenv.config({ path: './config.env' });
+
+require('./db/conn.js');
+
+
+
+
+
+
+
+
+
+
+// mongoose.connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
+// .then(()=>{
+//     console.log("mongo connect sucessfully");
+// })
+// .catch((err)=>{
+//     console.log(`mongoDB is not connected${err}`)
+// })
 
 const middleware = (req, res , next) => {
     console.log('this is middleware...');
@@ -33,7 +47,7 @@ app.get('/signin' , (req , res) =>{
 app.get('/signup' , (req , res) =>{
     res.send('hey this is signup..');
 });
-
+ 
 app.listen(PORT , () =>{
     console.log('server is running on 3000.');
 });
