@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
     <title>WeatherApp</title>
 </head>
+
 <body>
     <div class="box">
         <div class="wave -one"></div>
@@ -14,14 +14,14 @@
         <div class="wave -three"></div>
 
         <div id="weathercon" >
-            <i class="fas fa-sun" style="color: #f4cb01;"></i>
+            <i class='fas fa-sun' style='color: #f4cb01;'></i>
         </div>
 
         <div class="info">
-            <h2 class="location"><i class="fa-solid fa-street-view"></i></i>Pune, IN</h2>
+            <h2 class="location"><i class="fa-solid fa-street-view"></i></i>  {%location%}, {%country%}</h2>
             <p  id="date"> WED  | OCT | 2023</p>
-            <h1 class="temp"> 27°C </h1>
-            <h3 class="tempmin_max">MIN 36 °C | MAX 39 °C</h3>
+            <h1 class="temp"> {%tempval%} </h1>
+            <h3 class="tempmin_max">Min {%tempmin%} | Max {%tempmax%}</h3>
         </div>
 
     </div>
@@ -31,8 +31,17 @@
       const  curDate = document.getElementById('date');
       let weathercon = document.getElementById('weathercon');
 
-      const tempStatus = "colouds";
+      const tempStatus = "{%temperature%}";
 
+      if(tempStatus == "Sunny"){
+        weathercon.innerHTML = '<i class="fas fa-sun" style="color: #f4cb01;"></i>';
+      } else if(tempStatus == "Rainy") {
+        weathercon.innerHTML = '<i class="fas fa-cloud" style="color: #dfe4ea;"></i>';
+      } else if(tempStatus == "Clouds") {
+        weathercon.innerHTML = '<i class="fas fa-cloud-rain" style="color: #dfe4ea;"></i>';
+      } else {
+        weathercon.innerHTML = '<i class="fas fa-cloud" style="color: #dfe4ea;"></i>';
+      }
       const getCurrentDay = () => {
 
         var weekdays = new Array(7);
