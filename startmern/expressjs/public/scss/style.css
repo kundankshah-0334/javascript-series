@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GYM</title>
-
-</head>
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=PT+Sans&family=Signika+Negative:wght@300&display=swap"
-    rel="stylesheet">
- 
- <style>
-     
 body {
     background-color: rgb(82, 141, 141);
     font-family: 'Baloo Bhai 2', cursive;
     height: 620px;
     width: 95%;
-
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     
 }
 
@@ -107,37 +86,4 @@ body {
 .container h2{
     font-size: 38px;
 }
-.footer{
  
-    height: 4rem;
-    background-color: rgb(64, 15, 179);
-    color: wheat;
-    margin-top: auto;
-}
-
-.footer p{
-    text-align: center;
-    font-size: 23px;
-    line-height: 4rem;
-}
-
- </style>
-<body>
-    
-   {{>header}}
-    <div class="container">
-        <h2>Music For EveryOne.
-        </h2>
-        <p>"Immerse yourself in the world of music with our vast collection of tracks and genres. Discover, play, and enjoy your favorite tunes today!"</p>
-        <form action="">
-
-            <button class="btn">Download App</button>
-            <button class="btn">Contact Us</button>
-
-        </form>
-    </div>
-{{>footer}}
-
-</body>
-
-</html>

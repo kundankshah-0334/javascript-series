@@ -13,6 +13,10 @@ body {
     font-family: 'Baloo Bhai 2', cursive;
     height: 620px;
     width: 95%;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     
 }
 
@@ -96,12 +100,28 @@ body {
 .container h2{
     font-size: 38px;
 }
+.footer{
  
+    height: 4rem;
+    background-color: rgb(64, 15, 179);
+    color: wheat;
+    margin-top: auto;
+}
+
+.footer p{
+    text-align: center;
+    font-size: 23px;
+    line-height: 4rem;
+}
+
 
  </style>
- 
+
 <body>
        {{>header}}
     this is about page hbs hbs hbs hbs hbs hbs hbs hb hbs hbs 
+{{>footer}}
+
 </body>
+
 </html>
