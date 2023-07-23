@@ -23,7 +23,12 @@ app.get("/about" , (req , res) => {
     res.render("about");
 }); 
  
- 
+// app.get("/about/*" , (req , res) => {
+//     res.render("404" , {
+//         error : "This about page does not exists.",
+//     });
+
+// });
 app.get("*" , (req , res) => {
     res.render("404" , {
         error : "This page does not exists.",
