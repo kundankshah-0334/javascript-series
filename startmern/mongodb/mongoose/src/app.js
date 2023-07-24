@@ -25,3 +25,25 @@ const userSchema = new mongoose.Schema({
 });
 
 const UserModel = new mongoose.model("User" , userSchema);
+
+const userDocument = async () =>{
+    try{
+        const user1 = new UserModel({
+            name:"Raja",
+            age: 78,
+            course: "python",
+            emailId : "Raja123@gmail.com",
+            city : "Patna",
+            status:true,
+        });
+        
+        const result = await user1.save();
+        console.log(result);
+
+    }catch(err){
+        console.log(err);
+    }
+};
+
+userDocument();
+
