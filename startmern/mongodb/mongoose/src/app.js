@@ -89,9 +89,18 @@ const userDocument = async () =>{
 
 const getDocument = async () =>{
     try{
-        const result = await UserModel.find({course: "python"})
+        const result = await UserModel
+        // .find({age:{
+        //     $gt : 45
+        // } })
+        .find({course:{
+            $nin : ["c" , "python"]
+        } })
+        // .find({course:{
+        //     $in : ["c" , "python"]
+        // } })
         .select({name:1 ,_id:0})
-        .limit(1);
+        // .limit(1);
         console.log(result);
     }catch(err){
         console.log(err);
