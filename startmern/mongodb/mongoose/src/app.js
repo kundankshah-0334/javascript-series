@@ -90,15 +90,35 @@ const userDocument = async () =>{
 const getDocument = async () =>{
     try{
         const result = await UserModel
+
+
         // .find({age:{
         //     $gt : 45
         // } })
-        .find({course:{
-            $nin : ["c" , "python"]
-        } })
+
+
         // .find({course:{
-        //     $in : ["c" , "python"]
+        //     $nin : ["c" , "python"]
         // } })
+
+
+        // .find({
+        //     $or : [{name: "Raju"}, {name: "Raja"}]
+        // })
+
+
+        // .find({
+        //     $and : [{name: "Raju"}, {age: 12}]
+        // })
+
+        // .find({ age: { $not: { $gt: 12 } } } )
+
+
+        .find({course:{
+            $in : ["c" , "python"]
+        } })
+
+
         .select({name:1 ,_id:0})
         // .limit(1);
         console.log(result);
