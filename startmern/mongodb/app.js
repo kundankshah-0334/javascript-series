@@ -6,7 +6,6 @@ mongoose.connect(DB)
     })
     .catch((err) => { console.log(`db not connected ${err}`) })
 
-
 const studentSchema = mongoose.Schema({
     name: String,
     rollno: Number,
