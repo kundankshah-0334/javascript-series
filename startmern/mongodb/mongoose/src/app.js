@@ -167,5 +167,28 @@ const updateDocument = async (_id) => {
 //     }
 // }
 
+
+
+const deleteDocument = async (_id) => {
+    try{
+        const result = await UserModel.deleteOne({ _id});
+        console.log(result);
+    }catch(err){
+        console.log(err);
+    } 
+}
+// old wat to delete document
+// const deleteDocumentold = async (_id) => {
+//     try{
+//         const result = await UserModel.findByIdAndDelete({ _id});
+//         console.log(result);
+//     }catch(err){
+//         console.log(err);
+//     }
+// }
+
  
+// deleteDocumentold("64bed7f6749aad3d554e8147");
 updateDocument("64bed7f6749aad3d554e8145");
+
+
