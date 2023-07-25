@@ -18,7 +18,21 @@ const userSchema = new mongoose.Schema({
         minlength : 2,
         maxlength : 11
     } ,
-    age: Number,
+    age: {
+        type : Number,
+        // validate(value){
+        //     if(value < 0 ){
+        //         throw new Error("Age can not be negative....")
+        //     }
+        // }
+
+        validate : {
+            validator : function(value){
+                return value.length < 0
+            },
+            message : "Age must be 0 or positive"
+        }
+    },
     course: {
         type : String ,
         required :true ,
@@ -39,9 +53,10 @@ const UserModel = new mongoose.model("User" , userSchema);
 const userDocument = async () =>{
     try{
         const user11 = new UserModel({
-            name:"asdfghjkliu",
-            age: 78,
-            course: "MatHg",
+            name:
+            "asdfghjkliu",
+            age:  -78,
+            course: "MatH",
             emailId : "Raja123@gmail.com",
             city : "Patna",
             status:true,
