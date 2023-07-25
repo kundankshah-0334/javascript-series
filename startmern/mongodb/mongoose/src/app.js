@@ -114,14 +114,21 @@ const getDocument = async () =>{
         // .find({ age: { $not: { $gt: 12 } } } )
 
 
-        .find({course:{
-            $in : ["c" , "python"]
-        } })
+        // .find({course:{
+        //     $in : ["c" , "python"]
+        // } })
 
 
+        // .find()
+        // .select({name:1 ,_id:0})
+        // .countDocuments();
+
+        .find()
         .select({name:1 ,_id:0})
+        // .countDocuments()
+        .sort({"name" : -1});
         // .limit(1);
-        console.log(result);
+        console.log(result); 
     }catch(err){
         console.log(err);
     }
