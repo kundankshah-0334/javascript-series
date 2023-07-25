@@ -138,7 +138,7 @@ const getDocument = async () =>{
 // getDocument();
 
 
-const updateDocument1 = async (_id) => {
+const updateDocument = async (_id) => {
     try{
         const result = await UserModel.updateOne({ _id} , {
             $set : {
@@ -152,20 +152,20 @@ const updateDocument1 = async (_id) => {
 }
 
 //old way to update document---
-const updateDocument = async (_id) => {
-    try{
-        const result = await UserModel.findByIdAndUpdate({ _id} , {
-            $set : {
-                name : "Girdhari t  q"
-            }
-         } , {
-            new : true
-         });
-        console.log(result);
-    }catch(err){
-        console.log(err);
-    }
-}
+// const updateDocument = async (_id) => {
+//     try{
+//         const result = await UserModel.findByIdAndUpdate({ _id} , {
+//             $set : {
+//                 name : "Girdhari t  q"
+//             }
+//          } , {
+//             new : true
+//          });
+//         console.log(result);
+//     }catch(err){
+//         console.log(err);
+//     }
+// }
 
  
 updateDocument("64bed7f6749aad3d554e8145");
