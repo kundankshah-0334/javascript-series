@@ -22,21 +22,21 @@ const userSchema = new mongoose.Schema({
     age: {
         type : Number,
         //this is a simple mthod 
-        
-        // validate(value){
-        //     if(value < 0 ){
-        //         throw new Error("Age can not be negative....")
-        //     }
-        // }
+
+        validate(value){
+            if(value < 0 ){
+                throw new Error("Age can not be negative....")
+            }
+        }
 
         //this is a liitle bit longer method..
 
-        validate : {
-            validator : function(value){
-                return value > 0
-            },
-            message : "Age must be 0 or positive"
-        }
+        // validate : {
+        //     validator : function(value){
+        //         return value > 0
+        //     },
+        //     message : "Age must be 0 or positive"
+        // }
     },
     course: {
         type : String ,
