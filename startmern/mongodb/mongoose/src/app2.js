@@ -21,6 +21,7 @@ const userSchema = new mongoose.Schema({
     } ,
     age: {
         type : Number,
+        //this is a simple mthod 
         // validate(value){
         //     if(value < 0 ){
         //         throw new Error("Age can not be negative....")
