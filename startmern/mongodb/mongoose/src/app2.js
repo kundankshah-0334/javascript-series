@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const validator = require('validator');
 
 mongoose.connect('mongodb://localhost:27017/bmongodb', {useNewUrlParser: true , useUnifiedTopology : true})
 .then(()=>{
@@ -28,7 +29,7 @@ const userSchema = new mongoose.Schema({
 
         validate : {
             validator : function(value){
-                return value.length < 0
+                return value > 0
             },
             message : "Age must be 0 or positive"
         }
@@ -39,7 +40,15 @@ const userSchema = new mongoose.Schema({
         enum : ["python","java","math"],
         lowercase: true
     },
-    emailId : String,
+    emailId : {
+        type : String,
+        unique : true,
+        validate(value){
+            if(!validator.isEmail(value)){
+                throw new Error("Emai is not valid")
+            }
+        }
+    },
     city : String,
     status:Boolean,
     date:{
@@ -55,7 +64,7 @@ const userDocument = async () =>{
         const user11 = new UserModel({
             name:
             "asdfghjkliu",
-            age:  -78,
+            age: 78,
             course: "MatH",
             emailId : "Raja123@gmail.com",
             city : "Patna",
