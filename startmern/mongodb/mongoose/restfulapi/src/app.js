@@ -42,6 +42,16 @@ app.get("/students" ,async(req , res) => {
     }
 });
 
+app.get("/students/:id", async (req , res) => {
+   try{
+        const _id = req.params.id;
+        const studentData = await StudentModal.findById(_id);
+        res.send(studentData);
+
+   }catch(err){
+    res.status(500).send(err);
+   }
+});
 
 app.listen(port ,  () =>{
     console.log(`Connection succesful`);
