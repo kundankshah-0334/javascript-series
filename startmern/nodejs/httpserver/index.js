@@ -17,7 +17,7 @@ const server = http.createServer((req , res) =>{
     } 
     else{
         res.writeHead(404 , {"content-type" : "text/html"});
-        res.end(`<h1>Erro ! Page does'not exist</h1>`);
+        
     }
 });
 
