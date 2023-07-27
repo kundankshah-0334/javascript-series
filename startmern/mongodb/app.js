@@ -25,21 +25,7 @@ const createDocument = async () => {
             rollno: "21",
             standard: "BCA"
         })
-        const student3 = new Student({
-            name: "Mohan",
-            rollno: "22",
-            standard: "BCA"
-        })
-        const student4 = new Student({
-            name: "Vikram Gupta  ",
-            rollno: "23",
-            standard: "BCA"
-        })
-        const student5 = new Student({
-            name: "Sonu",
-            rollno: "24",
-            standard: "BCA"
-        })
+       
         const result = await Student.insertMany([student2,student3,student4,student5]);
         console.log(result)
     }
