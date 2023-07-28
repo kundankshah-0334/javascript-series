@@ -53,6 +53,36 @@ app.get("/students/:id", async (req , res) => {
    }
 });
  
+
+app.patch("/students/:id" , async(req,res) => {
+    try{
+        const _id = req.params.id;
+        const result = await StudentModal.findByIdAndUpdate( _id , req.body , {new : true});
+        
+        return res.send(result);
+         
+         
+    }catch(e){
+        res.send.status(400).send(e);
+    }
+});
+ 
+
+app.delete("/students/:id" , async(req,res) => {
+    try{
+        // const id = req.params.id;
+        const result = await StudentModal.findByIdAndDelete(req.params.id);
+        if(!req.params.id){
+            return res.send()
+            .status(400);
+        }
+        res.send(result);
+            // console.log(result);
+        
+    }catch(e){
+        res.send.status(500).send(e);
+    }
+});
  
 app.listen(port ,  () =>{
     console.log(`Connection succesful`);
