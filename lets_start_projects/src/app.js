@@ -33,55 +33,55 @@ app.get("/register" , (req , res) => {
     res.render("register");
 });
 
-app.post("/register" , async (req , res) => {
-     try{
-        const password = req.body.password ;
-        const cpassword = req.body.confirm_password ;
+// app.post("/register" , async (req , res) => {
+//      try{
+//         const password = req.body.password ;
+//         const cpassword = req.body.confirm_password ;
 
-        if(password == cpassword){
-            const userRegister = new Register ({
-                name: req.body.name,
-                email: req.body.email,
-                phone: req.body.phone,
-                 password : password,
-                 confirmpassword : cpassword
-            });
+//         if(password == cpassword){
+//             const userRegister = new Register ({
+//                 name: req.body.name,
+//                 email: req.body.email,
+//                 phone: req.body.phone,
+//                  password : password,
+//                  confirmpassword : cpassword
+//             });
 
-            const registred = await userRegister.save();
-            res.status(201).render("index");
-        }else{
-            res.send("Password doed not match.")
-        }
+//             const registred = await userRegister.save();
+//             res.status(201).render("index");
+//         }else{
+//             res.send("Password doed not match.")
+//         }
         
-     }catch(e) {
-        res.status(400).send(e);
-     }
-});
+//      }catch(e) {
+//         res.status(400).send(e);
+//      }
+// });
 
-app.post("/login" , async (req , res) => {
-     try{
+// app.post("/login" , async (req , res) => {
+//      try{
          
-         const email = req.body.email;
-         const pass = req.body.pass;
+//          const email = req.body.email;
+//          const pass = req.body.pass;
         
          
-         const userEmail = await Register.findOne({email});
-         console.log(userEmail.password);
+//          const userEmail = await Register.findOne({email});
+//          console.log(userEmail.password);
          
-         const isMatchPassword = await bcrypt.compare(pass , userEmail.password);
-         console.log(isMatchPassword);
+//          const isMatchPassword = await bcrypt.compare(pass , userEmail.password);
+//          console.log(isMatchPassword);
 
-        if(isMatchPassword){
-            res.status(201).render("index");
-        }else{
-            res.send("Invalid Crendentials");
-        }
+//         if(isMatchPassword){
+//             res.status(201).render("index");
+//         }else{
+//             res.send("Invalid Crendentials");
+//         }
        
-     }catch(e) {
-        res.status(400).send(e);
-     }
-});
-
+//      }catch(e) {
+//         res.status(400).send(e);
+//      }
+// });
+ 
 // const bcrypt = require("bcryptjs");
 
 // const securePassword = async (password) => {
