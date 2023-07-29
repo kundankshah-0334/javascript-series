@@ -77,23 +77,23 @@ app.post("/login" , async (req , res) => {
      }
 });
 
-const bcrypt = require("bcryptjs");
+// const bcrypt = require("bcryptjs");
 
-const securePassword = async (password) => {
-    const passwordHash = await bcrypt.hash(password ,10)
-    console.log(passwordHash);
-};
+// const securePassword = async (password) => {
+//     const passwordHash = await bcrypt.hash(password ,10)
+//     console.log(passwordHash);
+// };
 
-const comparePassword = async (password) => {
-    const passwordHash = "$2a$10$TuDCSOVSPs8dywaa9kN8wOYHJ3CjJaY9238SOqMlZO6C5LDsbTvKi";
-    const result = await bcrypt.compare(password ,passwordHash)
-    console.log(result);
-};
-comparePassword("1hgd23");
+// const comparePassword = async (password) => {
+//     const passwordHash = "$2a$10$TuDCSOVSPs8dywaa9kN8wOYHJ3CjJaY9238SOqMlZO6C5LDsbTvKi";
+//     const result = await bcrypt.compare(password ,passwordHash)
+//     console.log(result);
+// };
+// comparePassword("1hgd23");
 
 
 
-securePassword("1hgd23");
+// securePassword("1hgd23");
 
 app.listen(port  , () => {
     console.log(`Server running on http://localhost:${port}`);
