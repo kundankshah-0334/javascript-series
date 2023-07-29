@@ -5,7 +5,8 @@ const path =  require("path");
 const hbs =  require("hbs");
 const port = process.env.PORT || 8000;
 
-const Register = require("./models/registration")
+const Register = require("./models/registration");
+const { read } = require("fs");
 
 const static_path = path.join(__dirname , "../public");
 const views_path = path.join(__dirname , "../template/views");
@@ -55,6 +56,44 @@ app.post("/register" , async (req , res) => {
         res.status(400).send(e);
      }
 });
+
+app.post("/login" , async (req , res) => {
+     try{
+         
+         const email = req.body.email;
+         const pass = req.body.pass;
+        
+        const userEmail = await Register.findOne({email});
+        console.log(userEmail.password);
+
+        if(userEmail.password === pass){
+            res.status(201).render("index");
+        }else{
+            res.send("Invalid Crendentials");
+        }
+       
+     }catch(e) {
+        res.status(400).send(e);
+     }
+});
+
+const bcrypt = require("bcryptjs");
+
+const securePassword = async (password) => {
+    const passwordHash = await bcrypt.hash(password ,10)
+    console.log(passwordHash);
+};
+
+const comparePassword = async (password) => {
+    const passwordHash = "$2a$10$TuDCSOVSPs8dywaa9kN8wOYHJ3CjJaY9238SOqMlZO6C5LDsbTvKi";
+    const result = await bcrypt.compare(password ,passwordHash)
+    console.log(result);
+};
+comparePassword("1hgd23");
+
+
+
+securePassword("1hgd23");
 
 app.listen(port  , () => {
     console.log(`Server running on http://localhost:${port}`);
