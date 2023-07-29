@@ -3,6 +3,7 @@ const express =  require("express");
 const app = express();
 const path =  require("path");
 const hbs =  require("hbs");
+const bcrypt = require("bcryptjs");
 const port = process.env.PORT || 8000;
 
 const Register = require("./models/registration");
@@ -63,10 +64,14 @@ app.post("/login" , async (req , res) => {
          const email = req.body.email;
          const pass = req.body.pass;
         
-        const userEmail = await Register.findOne({email});
-        console.log(userEmail.password);
+         
+         const userEmail = await Register.findOne({email});
+         console.log(userEmail.password);
+         
+         const isMatchPassword = await bcrypt.compare(pass , userEmail.password);
+         console.log(isMatchPassword);
 
-        if(userEmail.password === pass){
+        if(isMatchPassword){
             res.status(201).render("index");
         }else{
             res.send("Invalid Crendentials");
