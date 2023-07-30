@@ -73,10 +73,10 @@ app.post("/login" , async (req , res) => {
         
          
          const userEmail = await Register.findOne({email});
-         console.log(userEmail.password);
+        //  console.log(userEmail.password);
          
          const isMatchPassword = await bcrypt.compare(pass , userEmail.password);
-         console.log(isMatchPassword);
+        //  console.log(isMatchPassword);
 
         if(isMatchPassword){
             res.status(201).render("index");
