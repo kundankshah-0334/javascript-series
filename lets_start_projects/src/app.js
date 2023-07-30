@@ -88,6 +88,11 @@ app.post("/login" , async (req , res) => {
          const token = await userEmail.generateAuthToken();
          console.log(token);
 
+         res.cookie("jwt" , token , {
+            expires : new Date(Date.now() + 30000),
+            httpOnly : true
+           });
+
 
 
         //  console.log(isMatchPassword);
