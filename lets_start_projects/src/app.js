@@ -4,6 +4,8 @@ const app = express();
 const path =  require("path");
 const hbs =  require("hbs");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+
 const port = process.env.PORT || 8000;
 
 const Register = require("./models/registration");
@@ -47,6 +49,10 @@ app.post("/register" , async (req , res) => {
                  confirmpassword : cpassword
             });
 
+            console.log("the Succcess part " + userRegister);
+           const token = await userRegister.generateAuthToken();
+           console.log(token);
+
             const registred = await userRegister.save();
             res.status(201).render("index");
         }else{
@@ -54,6 +60,7 @@ app.post("/register" , async (req , res) => {
         }
         
      }catch(e) {
+     console.log("error");
         res.status(400).send(e);
      }
 });
@@ -99,6 +106,18 @@ app.post("/login" , async (req , res) => {
 
 
 // securePassword("1hgd23");
+
+// const jwt = require("jsonwebtoken");
+
+// const createToken = async () => {
+//     const token =  await jwt.sign({id : "64c447cdc8913c7eee6e2d24" } , "dfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfd");
+//     console.log(token);
+
+//     const userVerify = await jwt.verify(token ,"dfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfd" );
+//     console.log(userVerify);
+// };
+
+// createToken();
 
 app.listen(port  , () => {
     console.log(`Server running on http://localhost:${port}`);
