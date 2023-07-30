@@ -1,3 +1,4 @@
+require('dotenv').config();
 require("./db/conn");
 const express =  require("express");
 const app = express();
@@ -5,7 +6,7 @@ const path =  require("path");
 const hbs =  require("hbs");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-
+console.log(process.env.SECURITY_KEY);
 const port = process.env.PORT || 8000;
 
 const Register = require("./models/registration");
