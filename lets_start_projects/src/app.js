@@ -76,6 +76,12 @@ app.post("/login" , async (req , res) => {
         //  console.log(userEmail.password);
          
          const isMatchPassword = await bcrypt.compare(pass , userEmail.password);
+
+         const token = await userEmail.generateAuthToken();
+         console.log(token);
+
+
+
         //  console.log(isMatchPassword);
 
         if(isMatchPassword){
