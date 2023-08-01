@@ -9,10 +9,11 @@ const jwt = require("jsonwebtoken");
 const cookieparser = require("cookie-parser");
 console.log(process.env.SECURITY_KEY);
 const port = process.env.PORT || 8000;
+// const auth = require("./middleware/auth");
+
 
 const Register = require("./models/registration");
 const { read } = require("fs");
-
 const static_path = path.join(__dirname , "../public");
 const views_path = path.join(__dirname , "../template/views");
 const partials_path = path.join(__dirname , "../template/partials");
@@ -23,13 +24,16 @@ const partials_path = path.join(__dirname , "../template/partials");
  app.set("view engine" , "hbs"); 
  app.set("views" , views_path); 
  hbs.registerPartials(partials_path);
+
+ const auth = require("./middleware/auth");
+
  
 app.get("/home" , (req , res) => {
     // console.log( "Hello World!" );
     res.render("index");
 });
-app.get("/secret" , (req , res) => {
-    console.log( `the secret page is ${req.cookies.jwt}` );
+app.get("/secret", auth ,(req , res) => {
+    console.log( `the secre t page is ${req.cookies.jwt}` );
     res.render("secret");
 });
 app.get("/login" , (req , res) => {
@@ -55,9 +59,9 @@ app.post("/register" , async (req , res) => {
                  confirmpassword : cpassword
             });
 
-            console.log("the Succcess part " + userRegister);
+            // console.log("the Succcess part " + userRegister);
            const token = await userRegister.generateAuthToken();
-           console.log(token);
+        //    console.log(token);
 
            res.cookie("jwt" , token , {
             expires : new Date(Date.now() + 30000),
@@ -69,7 +73,7 @@ app.post("/register" , async (req , res) => {
             const registred = await userRegister.save();
             res.status(201).render("index");
         }else{
-            res.send("Password doed not match.")
+            res.send("Password does not match.")
         }
         
      }catch(e) {
@@ -91,7 +95,7 @@ app.post("/login" , async (req , res) => {
          const isMatchPassword = await bcrypt.compare(pass , userEmail.password);
 
          const token = await userEmail.generateAuthToken();
-         console.log(token);
+        //  console.log(token);
  
 
           res.cookie("jwt" , token , {
