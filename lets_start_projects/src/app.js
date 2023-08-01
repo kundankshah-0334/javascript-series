@@ -45,6 +45,11 @@ app.get("/logout", auth , async (req , res) => {
     // req.user.tokens = req.user.tokens.filter((CurrToken) => {
     //     return CurrToken.token != req.token;
     // });
+
+    // for All logout
+    
+    // console.log(req.user);
+    req.user.tokens = [];
     res.clearCookie("jwt");
 
     console.log("Logout Succcessfully");
