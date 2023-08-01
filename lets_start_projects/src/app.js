@@ -6,6 +6,7 @@ const path =  require("path");
 const hbs =  require("hbs");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const cookieparser = require("cookie-parser");
 console.log(process.env.SECURITY_KEY);
 const port = process.env.PORT || 8000;
 
@@ -17,7 +18,7 @@ const views_path = path.join(__dirname , "../template/views");
 const partials_path = path.join(__dirname , "../template/partials");
  console.log(static_path);
  app.use(express.static(static_path));
-
+ app.use(cookieparser());
  app.use(express.urlencoded({extended : false}));
  app.set("view engine" , "hbs"); 
  app.set("views" , views_path); 
@@ -26,6 +27,10 @@ const partials_path = path.join(__dirname , "../template/partials");
 app.get("/home" , (req , res) => {
     // console.log( "Hello World!" );
     res.render("index");
+});
+app.get("/secret" , (req , res) => {
+    console.log( `the secret page is ${req.cookies.jwt}` );
+    res.render("secret");
 });
 app.get("/login" , (req , res) => {
     // console.log( "Hello World!" );
@@ -90,7 +95,7 @@ app.post("/login" , async (req , res) => {
  
 
           res.cookie("jwt" , token , {
-            expires : new Date(Date.now() + 1000),
+            expires : new Date(Date.now() + 30000),
             httpOnly : true
            });
 
