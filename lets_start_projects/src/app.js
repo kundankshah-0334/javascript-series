@@ -36,8 +36,28 @@ app.get("/secret", auth ,(req , res) => {
     console.log( `the secre t page is ${req.cookies.jwt}` );
     res.render("secret");
 });
+app.get("/logout", auth , async (req , res) => {
+   try {
+
+    // for single logout
+    
+    // console.log(req.user);
+    // req.user.tokens = req.user.tokens.filter((CurrToken) => {
+    //     return CurrToken.token != req.token;
+    // });
+    res.clearCookie("jwt");
+
+    console.log("Logout Succcessfully");
+
+    await req.user.save();
+    res.render("login");
+
+   } catch (error) {
+    res.status(400).send(error);
+   }
+});
 app.get("/login" , (req , res) => {
-    // console.log( "Hello World!" );
+    // console.log( "Hello World!" );2
     res.render("login");
 });
 app.get("/register" , (req , res) => {
@@ -64,7 +84,7 @@ app.post("/register" , async (req , res) => {
         //    console.log(token);
 
            res.cookie("jwt" , token , {
-            expires : new Date(Date.now() + 30000),
+            expires : new Date(Date.now() + 60000),
             httpOnly : true
            });
 
@@ -99,7 +119,7 @@ app.post("/login" , async (req , res) => {
  
 
           res.cookie("jwt" , token , {
-            expires : new Date(Date.now() + 30000),
+            expires : new Date(Date.now() + 60000),
             httpOnly : true
            });
 
