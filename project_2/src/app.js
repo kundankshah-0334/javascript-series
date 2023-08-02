@@ -17,7 +17,7 @@ app.set('view engine' , "hbs");
 
 app.get('/' , (req , res)=>{
 
-   res.send('from other side');
+   res.render('index');
 
 });
 app.get('/about' , (req , res)=>{
