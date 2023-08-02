@@ -12,7 +12,7 @@ app.use('/css' , express.static(path.join(__dirname , "../node_modules/bootstrap
 app.use('/js' , express.static(path.join(__dirname , "../node_modules/bootstrap/dist/js")));
 app.use('/jq' , express.static(path.join(__dirname , "../node_modules/dist")));
 
-// app.use(express.static(staticPath));
+app.use(express.static(staticPath));
 
 app.set('view engine' , "hbs");
 app.set('views' ,templatePath );
