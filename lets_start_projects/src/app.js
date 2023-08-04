@@ -52,7 +52,7 @@ app.get("/logout", auth , async (req , res) => {
     req.user.tokens = [];
     res.clearCookie("jwt");
 
-    console.log("Logout Succcessfully");
+    // console.log("Logout Succcessfully");
 
     await req.user.save();
     res.render("login");
