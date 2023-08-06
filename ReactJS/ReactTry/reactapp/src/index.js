@@ -14,11 +14,10 @@ ReactDOM.render(<h1>Hello  World!!</h1>
 
 
 ReactDOM.render(
-<React.Fragment>
+<>
 <h1>Hello  World!!</h1> 
 <h2>Hello  World!!</h2> 
 <p>Hello  World!!</p> 
-
-</React.Fragment>
+</>
 
 , document.getElementById("root"));
