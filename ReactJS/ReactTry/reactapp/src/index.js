@@ -24,6 +24,11 @@ ReactDOM.render(
 <h2>React Totorial</h2> 
 <h3>This all are my Favorite web series</h3> 
 <ol>
+    {/* <li>Panchyat</li>
+    <li>Mirzapur </li>
+    <li>Maharani </li>
+    <li>Flames</li>
+    <li>Cartel</li> */}
     <li>First Series is {s1} </li>
     <li>Second Series is {s2} </li>
     <li>Third Series is {s3} </li>
