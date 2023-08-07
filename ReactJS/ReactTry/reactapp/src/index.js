@@ -24,7 +24,11 @@ ReactDOM.render(
 <h2>React Totorial</h2> 
 <h3>This all are my Favorite web series</h3> 
 <ol>
-   
+    <li>First Series is {s1} </li>
+    <li>Second Series is {s2} </li>
+    <li>Third Series is {s3} </li>
+    <li>Fourth Series is {s4} </li>
+    <li>Fifth is {s5} </li>
 </ol>
 </>
 , document.getElementById("root"));
