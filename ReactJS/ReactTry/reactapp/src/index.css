@@ -24,12 +24,14 @@ code {
   display: flex;
   /* justify-content: center; */
   background-color: rgb(80, 97, 97);
-  width: 762px;
-  margin-left: 100px;
+  width: 45%;
+  /* margin-left: 100px; */
+  /* justify-content: center; */
+  margin-left: 27%;
 }
 
 .container img{
   height: 320px;
-  width: 250px;
-  padding: 2px;
+  width: 251px;
+  padding: 1px;
 }
