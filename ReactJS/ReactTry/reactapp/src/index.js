@@ -61,15 +61,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 const a = "This is Awesome";
 const g = "https://www.google.com";
-const i1 = "https://picsum.photos/200/255";
-const i2 = "https://picsum.photos/255/300";
-const i3 = "https://picsum.photos/305/405";
+const i1 = "https://picsum.photos/200/300";
+const i2 = "https://picsum.photos/202/300";
+const i3 = "https://picsum.photos/201/300";
 
 ReactDOM.render(
 <>
 <h1 class="heading">{a}</h1>
 {/* <a href="https://www.google.com" target="_blank">Google</a> */}
-<div className="conatiner">
+<div className="container">
 <img src={i1} alt="Picsum Images" />
 <img src={i2} alt="Picsum Images" />
 <img src={i3} alt="Picsum Images" />
