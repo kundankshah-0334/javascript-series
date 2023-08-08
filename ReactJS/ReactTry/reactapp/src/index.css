@@ -12,11 +12,12 @@ code {
     monospace;
 }
 .heading{
-  color: aqua;
+  color: rgb(248, 105, 9);
   text-align: center;
   text-transform: capitalize;
   font-weight: bold;
   margin: 40px;
+  font-family: 'Handjet', "cursive";
 }
 
 .container{
@@ -24,9 +25,7 @@ code {
   /* justify-content: center; */
   background-color: rgb(80, 97, 97);
   width: 762px;
-  
   margin-left: 100px;
-  
 }
 
 .container img{

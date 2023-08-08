@@ -59,15 +59,30 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+
 const a = "This is Awesome";
+
 const g = "https://www.google.com";
+
 const i1 = "https://picsum.photos/200/300";
+
 const i2 = "https://picsum.photos/202/300";
+
 const i3 = "https://picsum.photos/201/300";
+
+const heading = {
+    color: '#fa9191',
+    textAlign: 'center',
+    textTransform: 'capitalize',
+    fontWeight: 'bold',
+    margin : '40px',
+    fontFamily:" 'Handjet', 'cursive'"
+  }
+  
 
 ReactDOM.render(
 <>
-<h1 class="heading">{a}</h1>
+<h1 style={heading}>{a}</h1>
 {/* <a href="https://www.google.com" target="_blank">Google</a> */}
 <div className="container">
 <img src={i1} alt="Picsum Images" />
