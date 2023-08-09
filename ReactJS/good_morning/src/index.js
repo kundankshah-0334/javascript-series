@@ -1,6 +1,6 @@
 import React from 'react';
 import  ReactDOM from 'react-dom';
-
+import "./index.css"
 let currDate = new Date();
 // let currHour = currDate.getHours();
 let currHour = 16;
@@ -9,11 +9,7 @@ let message = "";
 const messageCss = {
 
 }
-const style = {
-    color : "",
-    textAlign : "center",
-    padding :"100px"
-  }
+
 
 if(currHour >= 6  && currHour < 12){
     message = "Good Morining";
@@ -31,7 +27,9 @@ if(currHour >= 6  && currHour < 12){
 
 ReactDOM.render(
   <>
-<h1 style={style}><span style={messageCss}>{message}</span>, Sir {currHour}</h1>
+  <div>
+    <h1><span style={messageCss}>{message}</span> , Sir</h1>
+  </div>
   </>
   ,document.getElementById("root")
 );
