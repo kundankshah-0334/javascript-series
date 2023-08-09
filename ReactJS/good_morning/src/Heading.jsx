@@ -1,5 +1,5 @@
 import React from 'react';
-import {Name , Age } from "./List";
+import {add , sub , mul , div} from "./List";
 function Heading() {
     return <h1>Hey This is Component In React</h1>
 }
@@ -11,15 +11,16 @@ function Para () {
 function List(){
     return (
         <ol>
-        <li>Matrix</li>
-        <li>Parralel World</li>
-        <li>Money Hell</li>
-        <li>Magnet II</li>
-        <li>{Name()}</li>
-        <li>{Age()}</li>
+        <li>Add of two number 23 and 8 = {add(23,8)}</li>
+        <li>Sub of two number 23 and 8 = {sub(23,8)}</li>
+        <li>Mul of two number 23 and 8 = {mul(23,8)}</li>
+        <li>Div of two number 23 and 8 = {div(23,8)}</li>
+       
+       
+      
     </ol>
     );
 }
 
 export default Heading;
-export {List , Para , Name};
+export {add , sub , mul , div , Para , List};
