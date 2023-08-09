@@ -1,14 +1,12 @@
 import React from "react";
 
-function List(){
-    return (
-        <ol>
-        <li>Matrix</li>
-        <li>Parralel World</li>
-        <li>Money Hell</li>
-        <li>Magnet II</li>
-    </ol>
-    );
+function Name () {
+    const name = "Kundan";
+    return name;
+}
+function Age () {
+    const age = 14;
+    return age;
 }
 
-export default List;
+export {Name , Age};
