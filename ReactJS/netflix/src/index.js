@@ -4,16 +4,16 @@
 
  const a = '';
 
- function Card() {
+ function Card(props) {
   return (
     <>
   <div class='Divv'>
   <div class="card">
-  <img src="https://picsum.photos/200/300" class="card-img-top" alt="..."/>
+  <img src={props.imgsrc} class="card-img-top" alt="..."/>
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="" className="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">{props.Sname}</h5>
+    <p class="card-text">{props.title}</p>
+    <a href={props.link} className="btn btn-primary" target='_blank'>Go somewhere</a>
   </div>
 </div>
   </div>
@@ -25,9 +25,9 @@
 
  ReactDOM.render(
   <>
-   <Card />
-   <Card />
-   <Card />
+   <Card imgsrc="https://picsum.photos/200/300" Sname="MIRZAPUR" title="The Series of Power and Money" link="https://picsum.photos/"/>
+   <Card imgsrc="https://picsum.photos/200/300" Sname="The Dark Thunder" title="The Series of Stranger" link="https://picsum.photos/"/>
+   <Card imgsrc="https://picsum.photos/200/300" Sname="Cartel" title="The Game of Politics and Gold" link="https://picsum.photos/"/>
   </>
   ,document.getElementById("root")
  )
