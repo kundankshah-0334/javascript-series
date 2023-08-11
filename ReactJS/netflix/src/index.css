@@ -14,3 +14,7 @@ code {
 .card{
   width: 18rem;
 }
+.Divv{
+  display: flex;
+  flex-direction: column;
+}

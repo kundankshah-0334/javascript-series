@@ -4,8 +4,9 @@
 
  const a = '';
 
- ReactDOM.render(
-  <>
+ function Card() {
+  return (
+    <>
   <div class='Divv'>
   <div class="card">
   <img src="https://picsum.photos/200/300" class="card-img-top" alt="..."/>
@@ -16,8 +17,17 @@
   </div>
 </div>
   </div>
+  </>
 
+  )
+  
+ }
 
- 
-  </>,document.getElementById("root")
+ ReactDOM.render(
+  <>
+   <Card />
+   <Card />
+   <Card />
+  </>
+  ,document.getElementById("root")
  )
