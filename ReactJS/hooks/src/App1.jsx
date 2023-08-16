@@ -1,4 +1,4 @@
- // import React, { useState } from "react";
+// import React, { useState } from "react";
 
 // const App = () => {
   
@@ -36,12 +36,11 @@ const App = () => {
        setTime(newtime);
 };
 
-setInterval(updateTime , 1000);
   return (
     <>
       <div class="container">
         <h1>{ctime}</h1>
-        {/* <button onClick={updateTime}>Get Time</button> */}
+        <button onClick={updateTime}>Get Time</button>
        </div>
     </>
   );
