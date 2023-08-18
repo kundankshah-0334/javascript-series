@@ -58,7 +58,7 @@ input::placeholder{
   color: #b7bfbf;
 }
 
-button {
+.add_button {
   background-color: #4b99e1;
   outline: none;
   border: none;
@@ -72,7 +72,45 @@ button {
   box-shadow: 5px 5px 15px -5px rgba(0 , 0 ,0 , 0.3);
 
 }
+.cross_x {
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  min-height: 20px;
+  width: 20px;
+  font-size: 13px;
+  background-color: #8566aa;
+  color: #fff;
+  box-shadow: 5px 5px 15px -5px rgba(0 , 0 ,0 , 0.3);
+
+}
 
 h1{
-  background-color: #64a5e1;
+  background-color: #09f77c;
+}
+
+
+
+.todo_style {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+.todo_style .cross_x{
+  
+  
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #8566aa;
+border-radius: 50%;
+margin: 0 15px 0px -11px;
+color: aliceblue;
+box-shadow: 5px 5px 15px -5px rgba(0 , 0 ,0 , 0.3);
+margin: 5px;
+}
+
+.cross_x:hover {
+background-color:red ;
 }
