@@ -2,7 +2,7 @@ const api_auestion = [
     {
         id : 1,
         question : "What is you name.",
-        answer : "My Nmae is Kundan Kumar Sahu",
+        answer : "My Nmae is Kundan Kumar Sahu.",
     },
     {
         id : 2,
@@ -26,4 +26,4 @@ const api_auestion = [
     },
 ]
 
-export default api_auestion;
+export default api_auestion
