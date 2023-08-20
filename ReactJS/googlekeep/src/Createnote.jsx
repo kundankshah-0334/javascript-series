@@ -9,7 +9,7 @@ const Createnote = () => {
        <form>
         <input type="text" placeholder="Title" autoComplete="off" />
         <textarea rows="" column="" placeholder="Type note" ></textarea>
-        <Button>
+        <Button className="btn_add">
             <AddIcon className="add_btn" />
         </Button>
        </form>

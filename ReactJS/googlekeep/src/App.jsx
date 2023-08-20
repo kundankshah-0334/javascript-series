@@ -2,13 +2,15 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Createnote from "./Createnote"
+import Note from "./Note"
 
 const App = () => {
   return (
     <>
     <Header />
-    <Footer />
     <Createnote />
+    <Note />
+    <Footer />
 
     </>
   );
