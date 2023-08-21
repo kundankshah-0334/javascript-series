@@ -86,3 +86,8 @@ textarea {
 }
  
  
+.del_btn:hover{
+ background-color: #e12828;
+ border-radius: 50%;
+ padding: 5px;
+}

@@ -13,7 +13,7 @@ const Note = (p) => {
  
       <p>{p.content}</p>
       <Button onClick={deleteNote}>
-        <DeleteOutlineIcon  />
+        <DeleteOutlineIcon className="del_btn" />
       </Button>
     </div>
     </>
