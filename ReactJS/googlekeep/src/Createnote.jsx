@@ -43,7 +43,15 @@ const Createnote = (props) => {
     <>
     <div className="main_div" onDoubleClick={backNormal}>
        <form> 
-       {
+        <input type="text" name="title" value={note.title} onChange={setData} placeholder="Title" autoComplete="off" />
+ 
+        <textarea onClick={expandIt}  rows="" name="content" value={note.content} onChange={setData} column="" placeholder="Type note" ></textarea>
+        <Button onClick={addEvent}>
+            <AddIcon className="add_btn" />
+        </Button>
+      
+ 
+       {/* {
         expand ?
         <input type="text" name="title" value={note.title} onChange={setData} placeholder="Title" autoComplete="off" />
         : null
@@ -55,7 +63,7 @@ const Createnote = (props) => {
             <AddIcon className="add_btn" />
         </Button>
         : null
-       } 
+       }  */}
  
        </form>
     </div>
