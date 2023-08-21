@@ -1,25 +1,36 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+// import { act } from "react-dom/test-utils";
+import Papa from "papaparse";
 
 const StateWise = () => {
 
-    const getCovidData = async () => {
-       const res = await fetch('https://data.covid19india.org/v4/min/data.min.json');
-       const actual_data = await res.json();
-       console.log(actual_data)
+  const [csvData , setCsvData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch("/data/state1.csv"); // Adjust the path to your CSV file
+      const reader = response.body.getReader();
+      const result = await reader.read();
+
+      const text = new TextDecoder().decode(result.value);
+      const { data } = Papa.parse(text, { header: true });
+
+      setCsvData(data);
     }
 
-    useEffect(()=>{
-        // getCovidData();
-    })
+    fetchData();
+  }, []);
+
+
   return (
     <>
   
       <div className="container mt-5">
       <div className="main-heading">
-          <h1  className="mb-5"> <span className="font-weight-bold">India </span>Covid- Data</h1>
+          <h1  className="mb-5 text-center"> <span className="font-weight-bold">India </span>Covid- Data</h1>
       </div>
       <div className="table-responsive">
-      <div className="table table-hover">
+      <table className="table table-hover">
         <thead className="thead-dark">
             <tr>
               <th>State</th>
@@ -31,26 +42,21 @@ const StateWise = () => {
             </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>State</td>
-            <td>Confirmed</td>
-            <td>Recovered</td>
-            <td>Deaths</td>
-            <td>Active</td>
-            <td>Updtaed</td>
-          </tr>
+          {csvData.map((row, index) => (
+            <tr key={index}>
+              <td>{row.State}</td>
+              <td>{row.Confirmed}</td>
+              <td>{row.Recovered}</td>
+              <td>{row.Deceased}</td>
+              <td>{row.Other}</td>
+              <td>{row.Tested}</td>
+              
+           
+            </tr>
+          ))}
         </tbody>
-        <tbody>
-          <tr>
-            <td>State</td>
-            <td>Confirmed</td>
-            <td>Recovered</td>
-            <td>Deaths</td>
-            <td>Active</td>
-            <td>Updtaed</td>
-          </tr>
-        </tbody>
-      </div>
+         
+      </table>
 
       </div>
 

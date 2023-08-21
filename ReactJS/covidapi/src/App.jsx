@@ -1,12 +1,10 @@
 import React from "react";
+import StateWise from './stateWise';
 
 const App = () => {
  
   return (
-    <>
-      <h1>Covid- Data</h1>
-     
-    </>
+    <StateWise />
   );
 }
 
