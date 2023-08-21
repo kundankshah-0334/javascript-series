@@ -2,12 +2,22 @@ import React, { useState } from "react";
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 
-const Createnote = () => {
+const Createnote = (props) => {
  
+    const [expand , setExpand ] = useState(false);
+
     const [note , setNote] = useState({
         title: "",
         content : ""
     });
+
+    const addEvent = () => {
+        props.passNote(note);
+        setNote({
+            title: "",
+            content : ""
+        })
+    }
 
     const setData = (event) => {
         const {name , value} = event.target;
@@ -22,16 +32,31 @@ const Createnote = () => {
         console.log(name)
         }
  
+        const expandIt = () => {
+            setExpand(true);
+        }
+        const backNormal = () => {
+            setExpand(false);
+        }
 
   return (
     <>
-    <div className="main_div">
-       <form>
+    <div className="main_div" onDoubleClick={backNormal}>
+       <form> 
+       {
+        expand ?
         <input type="text" name="title" value={note.title} onChange={setData} placeholder="Title" autoComplete="off" />
-        <textarea rows="" name="content" value={note.content} onChange={setData} column="" placeholder="Type note" ></textarea>
-        <Button className="btn_add">
+        : null
+       } 
+ 
+        <textarea onClick={expandIt}  rows="" name="content" value={note.content} onChange={setData} column="" placeholder="Type note" ></textarea>
+        { expand ?
+        <Button onClick={addEvent}>
             <AddIcon className="add_btn" />
         </Button>
+        : null
+       } 
+ 
        </form>
     </div>
     </>

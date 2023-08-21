@@ -23,6 +23,7 @@ footer {
 }
 
 .main_div {
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,6 +31,7 @@ footer {
   margin: 0 auto; 
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
   border-radius: 7px;
+  margin-top: 23px;
 }
 .note {
   display: flex;
