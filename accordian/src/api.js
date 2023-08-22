@@ -24,6 +24,21 @@ const api_auestion = [
         question : "How many language do you know ?",
         answer : "Currently , i Know Four Language.",
     },
+    {
+        id : 6,
+        question : "How many language do you know ?",
+        answer : "Currently , i Know Four Language.",
+    },
+    {
+        id : 7,
+        question : "How many language do you know ?",
+        answer : "Currently , i Know Four Language.",
+    },
+    {
+        id : 8,
+        question : "How many language do you know ?",
+        answer : "Currently , i Know Four Language.",
+    },
 ]
 
 export default api_auestion
