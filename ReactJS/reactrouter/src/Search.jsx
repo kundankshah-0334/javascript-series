@@ -13,7 +13,8 @@ const Search = () => {
       <input type="text" placeholder="Type Anything" value={img}   onChange={inputEvent}/>
       </div>
       <div className="sresult">
-      <Sresult val={img}/>
+      { img === "" ? null : <Sresult val={img} /> }
+      
       </div>
 
     </>
