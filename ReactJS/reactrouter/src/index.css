@@ -1,5 +1,18 @@
 
 .active_class {
-  background-color: aqua;
+  background-color: rgb(228, 179, 177);
   border:none;
+  color: rgb(96, 2, 2);
+}
+
+a {
+  color: aqua;
+}
+
+.nav_bar{
+  display:flex;
+  width:100%;
+  background-color: rgb(21, 21, 129);
+  padding: 23px;
+  justify-content: space-around;
 }

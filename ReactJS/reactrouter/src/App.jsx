@@ -4,14 +4,25 @@ import Home from './Home';
 import Contact from './Contact';
 import Error from './Error';
 import Navbar from './Navbar';
+import Service from "./Service"
+
 
 const App = () => {
+
+  const Name = () => {
+  return (
+    <h1>This is name Function</h1>
+  )
+ }
+
   return (
     <>
     <Navbar />
     <Routes >
-      <Route exact path='/' Component={Home} />
-      <Route exact path='/contact' Component={Contact} />
+      <Route exact path='/' Component={() => <Home name="Home" /> } />
+      <Route exact path='/contact' Component={() => <Contact name="Contact" />} />
+      <Route exact path='/service' Component={() => <Service name="Service" />} />
+      <Route exact path='/contact/name' Component={Name} />
       <Route component={Error} />
     </Routes>
       {/* <Home />
