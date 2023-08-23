@@ -1,6 +1,6 @@
 import React from "react";
 
-const Home = (props) => {
+const Service = (props) => {
   return (
     <>
       <h1>This is {props.name} page</h1>
@@ -8,4 +8,4 @@ const Home = (props) => {
   );
 }
 
-export default Home;
+export default Service;
