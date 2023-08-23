@@ -1,8 +1,8 @@
 import React from 'react';
-import {Routes, Route } from 'react-router-dom';
+import {Routes, Route , Navigate , Redirect} from 'react-router-dom';
 import Home from './Home';
 import Contact from './Contact';
-import Error from './Error';
+// import Error from './Error';
 import Navbar from './Navbar';
 import Service from "./Service";
 import Search from './Search';
@@ -28,10 +28,14 @@ const App = () => {
       <Route exact path='/search' Component={() => <Search name="search" />} />
       <Route  path='/user/:username/:lname' Component={() => <User name="User" />} />
       <Route exact path='/contact/name' Component={Name} />
-      <Route component={Error} />
+ 
+
+      <Route path="*" element={ <Navigate to="/" /> } />
+
+ 
+     
     </Routes>
-      {/* <Home />
-      <Contact /> */}
+ 
     </>
   );
 }
