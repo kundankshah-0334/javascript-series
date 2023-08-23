@@ -13,6 +13,9 @@ const Navbar = () => {
     <NavLink exact activeClassName="active_class" to="/contact">
     Contact
     </NavLink>
+    <NavLink exact activeClassName="active_class" to="/search">
+    Search
+    </NavLink>
     <NavLink exact activeClassName="active_class" to="/service">
     Service
     </NavLink>

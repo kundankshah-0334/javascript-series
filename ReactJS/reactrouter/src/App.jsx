@@ -4,7 +4,8 @@ import Home from './Home';
 import Contact from './Contact';
 import Error from './Error';
 import Navbar from './Navbar';
-import Service from "./Service"
+import Service from "./Service";
+import Search from './Search';
 
 import User from './User';
 
@@ -24,6 +25,7 @@ const App = () => {
       <Route exact path='/' Component={() => <Home name="Home" /> } />
       <Route exact path='/contact' Component={() => <Contact name="Contact" />} />
       <Route exact path='/service' Component={() => <Service name="Service" />} />
+      <Route exact path='/search' Component={() => <Search name="search" />} />
       <Route  path='/user/:username/:lname' Component={() => <User name="User" />} />
       <Route exact path='/contact/name' Component={Name} />
       <Route component={Error} />
