@@ -1,0 +1,37 @@
+body{
+    background-color: black;
+    color: white;
+ }
+ .move-icon{
+  height: 50px;
+  
+ }
+ .move-button{
+    background-color: transparent;
+    border: 2px solid white;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+ }
+ 
+ .result-css{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 40px;
+ }
+ .score-css{
+    margin-top: 50px;
+ }
+ 
+ .reset-score-button{
+    padding:12px;
+         padding-top: 10px;
+         background-color: rgb(247, 48, 13);
+         border: none;
+         color: white;
+         font-size: 15px;
+         border-radius: 8px;
+         cursor: pointer;
+ }

@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     <h1>Let's play Rock Paper Scisors---</h1>
+    <button onclick="
+    let comuterMove = '';
+     const randomNumber = Math.random();
+     if( randomNumber > 0 && randomNumber < 1/3){
+        comuterMove = 'Rock';
+     } else if( randomNumber > 1/3 && randomNumber < 2/3){
+         comuterMove ='Paper';
+     }
+     else if( randomNumber > 2/3 && randomNumber < 1){
+         comuterMove = 'Scissors';
+     }
+     console.log(comuterMove);
+
+     let result = '';
+     if(comuterMove === 'Rock'){
+        result = 'Tie';
+     } else if(comuterMove === 'Paper'){
+        result = 'You Loss';
+     }else if(comuterMove === 'Scissors'){
+        result = 'You Win';
+     }
+     alert(`You picked rock And Computer Picked ${comuterMove} And ${result}`)
+    ">Rock</button>
+
+
+    <button onclick="
+     comuterMove = '';
+      randomNumber = Math.random();
+     if( randomNumber > 0 && randomNumber < 1/3){
+        comuterMove = 'Rock';
+     } else if( randomNumber > 1/3 && randomNumber < 2/3){
+         comuterMove ='Paper';
+     }
+     else if( randomNumber > 2/3 && randomNumber < 1){
+         comuterMove = 'Scissors';
+     }
+     console.log(comuterMove);
+
+      result = '';
+     if(comuterMove === 'Rock'){
+        result = 'You Win';
+     } else if(comuterMove === 'Paper'){
+        result = 'Tie';
+     }else if(comuterMove === 'Scissors'){
+        result = 'You Loss';
+     }
+     alert(`You picked paper And Computer Picked ${comuterMove} And ${result}`)
+    ">Paper</button>
+
+
+
+    <button onclick="
+     comuterMove = '';
+      randomNumber = Math.random();
+     if( randomNumber > 0 && randomNumber < 1/3){
+        comuterMove = 'Rock';
+     } else if( randomNumber > 1/3 && randomNumber < 2/3){
+         comuterMove ='Paper';
+     }
+     else if( randomNumber > 2/3 && randomNumber < 1){
+         comuterMove = 'Scissors';
+     }
+     console.log(comuterMove);
+
+      result = '';
+     if(comuterMove === 'Rock'){
+        result = 'You Loss';
+     } else if(comuterMove === 'Paper'){
+        result = 'You Win';
+     }else if(comuterMove === 'Scissors'){
+        result = 'Tie';
+     }
+     alert(`You picked Scissors And Computer Picked ${comuterMove} And ${result}`)
+    ">Scissors</button>
+
+     
+    
+    <script>
+        
+        //  console.log(randomNumber);
+        let s = 0;
+       console.log( s ? 'truth' : 'False');
+    </script>
+</body>
+</html>
