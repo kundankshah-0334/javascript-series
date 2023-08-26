@@ -8,7 +8,7 @@ const Card = (props) => {
  
     <div className="col-md-4 col-10 mx-auto">
         <div className="card">
-            <img src={props.imgsrc} class="card-img-top" alt={props.imgsrc} /><br />
+            <img src={props.imgsrc} class="card-img-top" alt="image" /><br />
                 <div className="card-body">
                     <h5 className="card-title text-center">{props.title}</h5>
                     <div className="text-center">
