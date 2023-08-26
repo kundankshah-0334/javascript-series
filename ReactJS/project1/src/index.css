@@ -110,4 +110,9 @@ body {
  }
 
 
- 
+ .image_class{
+  background-color: #dbf1ff;
+  /* margin: 5px 0px 5px 5px ; */
+  margin-top: 5px;
+  margin-left: 8px;
+ }
