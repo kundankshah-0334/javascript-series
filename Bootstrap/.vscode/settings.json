@@ -1,0 +1,5 @@
+{
+    "emmit.includeLanguages" : {
+        "javasript" : "javascriptreact"
+    }
+}
