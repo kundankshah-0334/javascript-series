@@ -1,7 +1,7 @@
 const api_auestion = [
     {
         id : 1,
-        question : "What is you name.",
+        question : "What is you name name name.",
         answer : "My Nmae is Kundan Kumar Sahu.",
     },
     {
